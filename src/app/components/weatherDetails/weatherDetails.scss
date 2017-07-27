@@ -32,3 +32,12 @@
   margin-top: 5px;
   color: $sky-blue-color;
 }
+@-moz-document url-prefix() {
+  .loader-container {
+    position: relative;
+    .loader {
+      position: relative;
+      left: 42%;
+    }
+  }
+}

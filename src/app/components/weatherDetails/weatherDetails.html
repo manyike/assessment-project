@@ -1,24 +1,24 @@
 <div class="col-sm-8 content">
-  <div ng-hide="$ctrl.loading || (!$ctrl.loading && !$ctrl.details.name)">
-    <h3>Current weather in {{$ctrl.details.name}}</h3>
+  <div ng-hide="$ctrl.loading || (!$ctrl.loading && !$ctrl.weather.areaName)">
+    <h3>Current weather in {{$ctrl.weather.areaName}}</h3>
     <div>
       <div class="weather-details">
         <img src="http://openweathermap.org/img/w/{{$ctrl.weather.icon}}.png" width="150px" height="150px">
       </div>
       <div class="weather-description">
         <p>Description: {{$ctrl.weather.description}}</p>
-        <p>Temperature: {{$ctrl.details.main.temp}}</p>
-        <p>Max temperature: {{$ctrl.details.main.temp_max}}</p>
-        <p>Min temperature: {{$ctrl.details.main.temp_min}}</p>
-        <p>Wind speed: {{$ctrl.details.wind.speed}} kmph</p>
+        <p>Temperature: {{$ctrl.weather.temp}}</p>
+        <p>Max temperature: {{$ctrl.weather.max_temp}}</p>
+        <p>Min temperature: {{$ctrl.weather.min_temp}}</p>
+        <p>Wind speed: {{$ctrl.weather.windSpeed}} meter/sec</p>
       </div>
     </div>
   </div>
-  <div ng-show="!$ctrl.loading && !$ctrl.details.name">
+  <div ng-show="!$ctrl.loading && !$ctrl.weather.areaName">
     <h3>OOPS SOMETHING WENT WRONG</h3>
     <p>Please try again and make sure to give the app permission for your location </p>
   </div>
-  <div ng-show="$ctrl.loading">
+  <div ng-show="$ctrl.loading" class="loader-container">
     <div class="loader"></div>
     <p class="loader-message">Loading latest weather info</p>
   </div>

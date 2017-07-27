@@ -2,7 +2,15 @@
 @import '../../assets/variables';
 .refresh-weather {
   clear: both;
+  margin-bottom: 20px;
 }
 .sub-tile {
   color: $sky-blue-color;
+}
+.header {
+  text-align:center;
+}
+
+.container {
+  text-align: center;
 }

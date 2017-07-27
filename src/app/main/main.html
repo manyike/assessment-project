@@ -1,20 +1,18 @@
 
-<div style="text-align:center" class="header">
+<div class="header">
   <h1 class="sub-tile">
     {{mainCtrl.title}}
   </h1>
   <img width="300" ng-src="assets/images/binoculars.jpg" alt="weather sniffers" />
 </div>
 <div class="content container">
-
   <div class="col-sm-2"></div>
   <weather-details
-    details="mainCtrl.latestWeather"
-    weather="mainCtrl.latestWeather.weather[0]"
+    weather="mainCtrl.latestWeather"
     loading="mainCtrl.loading">
   </weather-details>
   <div class="col-sm-2"></div>
-  <div class="refresh-weather" ng-hide="mainCtrl.loading || (!mainCtrl.loading && !mainCtrl.latestWeather.name)">
+  <div class="refresh-weather" ng-hide="mainCtrl.loading || (!mainCtrl.loading && !mainCtrl.latestWeather.areaName)">
     <button type="button" ng-click="mainCtrl.refreshWeather()" class="btn btn-primary btn-lg">
       Refresh
     </button>

@@ -26,7 +26,18 @@
               if (error) {
                 toastr.error('Error fetching weather details for your location.');
               } else {
-                viewModel.latestWeather = results;
+                // reformat the response for ease of referencing in the other component
+                var weather = results.weather[0] ? results.weather[0] : {};
+                var main = results.main ? results.main : {};
+                viewModel.latestWeather = {
+                  description: weather.description,
+                  temp: results.main.temp,
+                  max_temp: main.temp_max,
+                  min_temp: main.temp_min,
+                  windSpeed: results.wind.speed,
+                  areaName: results.name,
+                  icon: weather.icon
+                }
               }
             }
           );
